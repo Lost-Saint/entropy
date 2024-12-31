@@ -3,7 +3,7 @@ import svelte from "rollup-plugin-svelte";
 import commonjs from "@rollup/plugin-commonjs";
 import resolve from "@rollup/plugin-node-resolve";
 import typescript from "@rollup/plugin-typescript";
-import preprocess from "svelte-preprocess";
+import { sveltePreprocess } from "svelte-preprocess";
 import os from "os";
 import fs from "fs";
 const production = !process.env.ROLLUP_WATCH;
@@ -51,7 +51,7 @@ function buildConfig(inputFileName, outputFileName) {
         compilerOptions: {
           dev: !production,
         },
-        preprocess: preprocess({
+        preprocess: sveltePreprocess({
           typescript: {
             tsconfigFile: "./tsconfig.app.json",
           },

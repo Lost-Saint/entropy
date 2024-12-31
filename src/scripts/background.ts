@@ -1,14 +1,14 @@
 import browser from 'webextension-polyfill';
+import init, {greet} from './wasm';
 
 browser.runtime.onInstalled.addListener(() => {
     console.log("Extension installed successfully!");
   
+    
   });
 
   browser.runtime.onMessage.addListener(async (request) => {
-    console.log(request);
-// listners must be async.
-    return new Promise((resolve, reject) => {
-      resolve({ message: 'Hello from background script' });
-    });
-  })
+   await init();
+   const response = await greet()
+   return response;
+})
