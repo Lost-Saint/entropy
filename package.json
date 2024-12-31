@@ -1,0 +1,36 @@
+{
+  "name": "revitalize",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "BUILD_ENV=chrome rollup -c -w",
+    "chrome": "BUILD_ENV=chrome rollup -c",
+    "firefox": "BUILD_ENV=firefox rollup -c",
+    "lint": "eslint  --fix 'src/**/*.{js,ts,svelte}' --ignore-pattern 'src/scripts/wasm.js'",
+    "format": "prettier --write 'src/**/*.{js,ts,svelte}'",
+    "prepare": "husky"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.2",
+    "@rollup/plugin-node-resolve": "^16.0.0",
+    "@rollup/plugin-typescript": "^12.1.2",
+    "@tsconfig/svelte": "^5.0.4",
+    "@types/node": "^22.10.2",
+    "@types/webextension-polyfill": "^0.12.1",
+    "rollup": "^4.29.1",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-svelte": "^7.2.2",
+    "svelte": "^5.16.0",
+    "svelte-check": "^4.1.1",
+    "svelte-preprocess": "^6.0.3",
+    "tslib": "^2.8.1",
+    "typescript": "^5.7.2",
+    "webextension-polyfill": "^0.12.0"
+  }
+}
